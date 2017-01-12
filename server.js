@@ -1,7 +1,10 @@
-const express = require('express')
-const bodyParser = require('body-parser');
-const expressSession = require('express-session');
-const passport = require('passport');
-const passportGit = require('passport-github2');
+const express = require('express'),
+    session = require('express-session'),
+    bodyParser = require('body-parser'),
+    massive = require('massive'),
+    passport = require('passport'),
+    GithubStrategy = require('passport-github2'),
+    cors = require('cors'),
+    config = require('./config.js')
 
-let app = express()
+let app = express();
