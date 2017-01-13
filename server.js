@@ -19,6 +19,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static('./public'));//serve all your folder
 
 passport.use(new GitHubStrategy({
     clientID: config.clientID,
@@ -52,7 +53,7 @@ app.get('/auth/github/callback',
     res.status(200).send(req.user);
   });
 
-app.use(express.static('./public'));//serve all your folder
+
 
 app.listen(3000, function() {
   console.log('Connected on 3000')
